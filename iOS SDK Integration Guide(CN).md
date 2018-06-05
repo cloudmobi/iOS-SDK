@@ -30,6 +30,7 @@
    - SystemConfiguration.framework
    - UIKit.framework
    - CTSDK.framework
+   - libz.tbd
 
    同时应该检查 [CTSDK](https://github.com/cloudmobi/CloudmobiSSP/blob/master/(CT)iOS-SDK.zip) 框架是否出现在链接框架和库下面。如果先前的拖放步骤没有自动链接，我们可以通过点击 '+' 然后'添加其他'手动添加它。
 
