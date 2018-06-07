@@ -325,10 +325,8 @@ CTNaTemplateDelegate 代理回调方法
 ```
 <a name="nativevideo">获取原生视频广告</a>
 
-原生视频有两种接入方式，一种类似元素广告，SDK提供videoview, background image等等元素，用户拼接界面并控制播放流程。但是请注意video不会在3g/4g情况下播放，此时开发者应该使用大图和播放按钮代替（代理函数中均有提供），当用户点击广告时跳转到SDK自定义视频页面，得到用户许可后视频会播放。另一种是mediaview方式，开发者不需要关心播放逻辑和3g/4g的情况，mediaview会自动处理，推荐使用mediaview方式接入。两种方式均可在demo中查到。
+原生视频有两种接入方式，一种类似元素广告，SDK提供videoview, background image等等元素，用户拼接界面并控制播放流程。但是请注意video不会在3g/4g情况下播放，此时开发者应该使用大图和播放按钮代替（代理函数中均有提供），当用户点击广告时跳转到SDK自定义视频页面，得到用户许可后视频会播放。另一种是mediaview方式，开发者不需要关心播放逻辑和3g/4g的情况，mediaview会自动处理，推荐使用mediaview方式接入。两种方式均可在demo中查到。https://github.com/cloudmobi/iOS-SDK/blob/master/iOS%20SDK%20Demo.zip
 ```
-https://github.com/cloudmobi/iOS-SDK/blob/master/iOS%20SDK%20Demo.zip
-
 /**
  请求原生视频广告
  由于GDPR，因此广告角标需要媒体手动添加touch事件，可以通过safai打开返回的choices_link_url。角标使用ADsignImage对象
