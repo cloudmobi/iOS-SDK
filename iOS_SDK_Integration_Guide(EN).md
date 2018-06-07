@@ -280,7 +280,7 @@ For the first time you request rewarded video ads, you may need to try serveral 
 ```
 
 ### <a name="nativevideo">Adding the Native Video Ad API in iOS</a>
-
+iOS SDK supports two ways to use native video. One is like Elements Ad which support videoView, background image etc, developers should notice that videoView won't play in 3g/4g, we should add a background image and play btn image(we both offer in delegate function) instead. User click the images to present a custom video controller. The other is like mediaview, We recommend to use mediaview. For more detail you should check our demo.
 ```
 /**
  Get Native video Ad
