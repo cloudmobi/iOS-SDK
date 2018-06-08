@@ -87,6 +87,22 @@ NSString* slotid = @"你的CloudMobi账户当前App下的任意一个广告ID";
 
 ------
 
+Use this interface to upload consent from affected users.
+
+```
+/**
+ For GDPR
+
+ @param consentValue  yes/no/other
+ @param consentType   content type is the agreement name you signed with users
+ @param complete      state
+ */
+- (void)uploadConsentValue:(NSString *)consentValue
+	       consentType:(NSString *)consentType
+		  complete:(void(^)(BOOL state))complete;
+```
+
+
 <a name="native">获取元素(Native)广告</a>
 
 ```
