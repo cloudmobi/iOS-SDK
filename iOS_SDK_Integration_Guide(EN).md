@@ -60,6 +60,21 @@ Replace Your_Cloudmobi_slotID with your Slot ID -- Where can I find my Slot ID? 
 ![image](https://user-images.githubusercontent.com/20314643/35969194-03005aa0-0d01-11e8-8d24-92a6b9882a77.png)
 
 
+Use this interface to upload consent from affected users.
+
+```
+/**
+ For GDPR
+
+ @param consentValue  yes/no/other
+ @param consentType   content type is the agreement name you signed with users
+ @param complete      state
+ */
+- (void)uploadConsentValue:(NSString *)consentValue
+	       consentType:(NSString *)consentType
+		  complete:(void(^)(BOOL state))complete;
+```
+
 
 ###  <a name="rewardedvideo">Adding the RewardVideo Ad API in iOS</a>
 For the first time you request rewarded video ads, you may need to try serveral times.Because it takes a while to load the video files.Once a video file loads completely, it will response immediately.
