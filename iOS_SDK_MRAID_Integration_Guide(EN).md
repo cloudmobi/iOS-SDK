@@ -207,13 +207,14 @@ For the first time you request rewarded video ads, you may need to try serveral 
     
     - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
 
-   #pragma mark delegate
+   CTAdViewDelegate interface which is related to banner
+    //banner ad
     - (void)CTAdViewDidRecieveBannerAd:(CTADMRAIDView*)adView{
-        NSLog(@"ct banner");
+        NSLog(@"receive CT banner");
     }
-
+    //error while request ads.
     - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
-        NSLog(@" request ads with error");
+        NSLog(@"request CT ads with error");
     }
     
     
@@ -251,72 +252,40 @@ CTNativeVideoDelegate Callback Delegate
 ### <a name="NewDynamicInterstitial">Adding the New Dynamic Interstitial Ad API in iOS</a>
 
 ```
-/**
- Preload Interstitial Ad
- Call this interface preload Interstitial AD.
+    /**
+     Preload Interstitial Ad
+     Call this interface preload Interstitial AD.
  
- @param slot_id         Cloud Tech AD ID
- @param delegate        Set Delegate of Ads event (<CTADInterstitialDelegate>)
- @param isTest          Use test advertisement or not
- */
-- (void)preloadInterstitialAdWithSlotId:(NSString *)slot_id
-                             delegate:(id)delegate
-                               isTest:(BOOL)isTest;
+     @param slot_id         Cloud Tech AD ID
+     @param delegate        Set Delegate of Ads event (<CTAdViewDelegate>)
+     @param isTest          Use test advertisement or not
+     */
+    - (void)preloadMRAIDInterstitialAdWithSlotId:(NSString *)slotid delegate:(id)delegate isTest:(BOOL)isTest;
 
-/**
- Show interstitial ad
- Call this method after preload Interstitial ad success
- */
-- (void)interstitialAdShow;
+    /**
+     Show interstitial ad
+     Call this method after preload Interstitial ad success
+     */
+    - (void)mraidInterstitialShow;
 
-/**
- Show interstitial ad with user vc present
- Call this method after preload Interstitial ad success
- */
-- (void)interstitialAdShowWithController:(UIViewController *)VC;
-
-/**
- Check interstitial ad to be Ready
- Call this method before show ad
- */
-- (BOOL)interstitialAdIsReady;
-			  
-CTADInterstitialDelegate Callback Delegate
-
-/**
- * Get Ad Success.
- */
--(void)CTADInterstitialGetAdSuccess;
-
-/**
- * Get Ad Error.
- */
--(void)CTADInterstitialGetAdFailed:(NSError *)error;
-
-/**
- * User click the advertisement.
- */
--(void)CTADInterstitialDidClick;
-
-/**
- * Ad show error.
- */
-- (void)CTADInterstitialAdShowFailed:(NSError *)error;
-
-/**
- * jump to LandingPage.
- */
-- (void)CTADInterstitialDidIntoLandingPage;
-
-/**
- * jump to LandingPage failed.
- */
-- (void)CTADInterstitialJumpFailed;
-
-/**
- * User close the advertisement.
- */
--(void)CTADInterstitialClosed;     
+    /**
+     Check interstitial ad to be Ready
+     Call this method before show ad
+     */
+    - (BOOL)mraidInterstitialIsReady;
+    
+    
+    CTAdViewDelegate interface which is related to interstitial
+    //interstitial is ready, call mraidInterstitialShow to show it.
+    - (void)CTAdViewDidRecieveInterstitialAd{
+    	NSLog(@"receive CT Interstitial");
+    }
+    
+    //error while request ads. (share the same error delegate interface with banner)
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
+    	NSLog(@"request CT ads with error");
+    }
+    
 ```
 **IMPORTANT: If you got the error message:"not interstitial slot",please check if the ad format in SSP is the same with the API in SDK.
 
