@@ -5,7 +5,6 @@
   - [Rewarded Video](#rewardedvideo)
   - [Native](#native)
   - [Banner](#banner)
-  - [Native Template](#nativetemplate)
   - [Native Video](#nativevideo)
   - [New Dynamic Interstitial（need create new dynamic interstitial slot）](#NewInterstitial)
 
@@ -198,46 +197,26 @@ For the first time you request rewarded video ads, you may need to try serveral 
 
 ```
     /**
-     To get the Banner ads 
-     @param slot_id         Banner Ad SlotID
-     @param delegate        declare that ViewController implements the CTBannerDelegate protocol
-     @param frame           Set Ad Frame
-     @param isNeedBtn       is need Close button
-     @param isTest          Debug Mode , Retention parameters
-     @param success         Load Ad success callback
-     @param failure         Load Ad Failed callback
-     */
-    - (void)getBannerADswithSlotId:(NSString *)slot_id
-                          delegate:(id)delegate
-                             frame:(CGRect)frame
-                   needCloseButton:(BOOL)isNeedBtn
-                            isTest:(BOOL)isTest
-                           success:(void (^)(UIView *bannerView))success
-                           failure:(void (^)(NSError *error))failure;
-                           
-    CTBannerDelegate Callback interface
-    - (void)CTBannerDidClick:(CTBanner*)banner {
-        NSLog(@""click Ad");
-    }
-    - (void)CTBannerDidIntoLandingPage:(CTBanner*)banner {
-        NSLog(@"did Into LandingPage");
-    }
-    - (void)CTBannerDidLeaveLandingPage:(CTBanner*)banner {
-        NSLog(@"did Leave LandingPage");
-    }
-    - (void)CTBannerClosed:(CTBanner*)banner {
-        NSLog(@"closed ad");
-    }
-    - (void)CTBannerWillLeaveApplication:(CTBanner*)banner {
-        NSLog(@"will leave Application");
-    }
-    - (void)CTBannerHtml5Closed:(CTBanner*)banner {
-        NSLog(@"closed html5 ad");
-    }
-    - (void)CTBannerJumpfail:(CTBanner *)banner {
-        NSLog(@"click ad Jump App store failed");
+    *Get Banner Ad View
+    *@param slot_id         Cloud Tech Banner AD ID
+    *@param delegate        Set Delegate of Ad event(<CTAdViewDelegate>)
+    *@param adSize          requre Ad Size
+    *@param containerView   the view which shows ads on
+    *@param isTest          Use test advertisement or not
+    */
+    
+    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
+
+   #pragma mark delegate
+    - (void)CTAdViewDidRecieveBannerAd:(CTADMRAIDView*)adView{
+        NSLog(@"ct banner");
     }
 
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
+        NSLog(@" request ads with error");
+    }
+    
+    
 ```
 
 
@@ -246,53 +225,6 @@ For the first time you request rewarded video ads, you may need to try serveral 
     
     
 
-
-### <a name="nativetemplate">Adding the Native Template Ad API in iOS</a>
-
-```
-
-/**
-     To get the Native Template ads
-     @param slot_id         NATemplate Ad SlotID
-     @param delegate        declare that ViewController implements the CTNaTemplateDelegate protocol
-     @param frame           Set Ad Frame
-     @param isNeedBtn       is need Close button
-     @param isTest          Debug Mode , Retention parameters
-     @param success         Load Ad success callback
-     @param failure         Load Ad failed callback
-     */
-    - (void)getNaTemplateADswithSlotId:(NSString *)slot_id
-                              delegate:(id)delegate
-                                 frame:(CGRect)frame
-                       needCloseButton:(BOOL)isNeedBtn
-                                isTest:(BOOL)isTest
-                               success:(void (^)(UIView *NaTemplateView))success
-                               failure:(void (^)(NSError *error))failure;
-                               
-    CTNaTemplateDelegate Callback Delegate 
-    - (void)CTNaTemplateDidClick:(CTNaTemplate*)naTemplate {
-        NSLog(@"click Ad");
-    }
-    - (void)CTNaTemplateDidIntoLandingPage:(CTNaTemplate*)naTemplate {
-        NSLog(@"did Into LandingPage");
-    }
-    - (void)CTNaTemplateDidLeaveLandingPage:(CTNaTemplate*)naTemplate {
-        NSLog(@"did Leave LandingPage");
-    }
-    - (void)CTNaTemplateClosed:(CTNaTemplate*)naTemplate {
-        NSLog(@"closed ad");
-    }
-    - (void)CTNaTemplateWillLeaveApplication:(CTNaTemplate*)naTemplate {
-        NSLog(@"will leave Application");
-    }
-    - (void)CTNaTemplateHtml5Closed:(CTNaTemplate*)naTemplate {
-        NSLog(@"closed html5 ad");
-    }
-    - (void)CTNaTemplateJumpfail:(CTNaTemplate *)naTemplate {
-        NSLog(@"click ad Jump App store failed");
-    }
-
-```
 
 ### <a name="nativevideo">Adding the Native Video Ad API in iOS</a>
 iOS SDK supports two ways to use native video. One is like Elements Ad which SDK supports videoview, background image and interface to controll video play or stop. Developers should notice that video won't play in 3g/4g, we should add a background image and play button image(we both offer in delegate function) instead. User click the images to present a custom video controller, with user's permission to play video. The other is like mediaview. We recommend to use mediaview, beacuse developers don't need to worry about the issue, mediaview will do this for you. For more detail you should check our demo.https://github.com/cloudmobi/iOS-SDK/blob/master/iOS%20SDK%20Demo.zip
