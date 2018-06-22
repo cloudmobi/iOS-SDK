@@ -272,6 +272,27 @@ CTBannerDelegate 代理回调方法
 -(void)CTBannerJumpfail:(CTBanner*)banner;                  //跳转失败
 
 
+    /**
+    *获取条幅广告
+    *@param slot_id         Banner广告SlotID
+    *@param delegate        设置遵守 <CTAdViewDelegate> 的代理对象
+    *@param adSize          设置广告Frame
+    *@param containerView   设置广告容器
+    *@param isTest          是否开启Debug模式，保留参数
+    */
+    
+    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
+
+    /**
+     与条幅广告相关的CTAdViewDelegate代理方法， 更多详细代理请查看CTADMRAIDView.h文件
+     条幅广告已准备好
+    */
+    - (void)CTAdViewDidRecieveBannerAd:(CTADMRAIDView*)adView;
+    /**
+     条幅广告获取失败
+    */
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error;
+
 ```
 <a name="nativevideo">获取原生视频广告</a>
 
@@ -319,18 +340,14 @@ CTNativeVideoDelegate 代理回调方法
     
     
     /**
-     与Banner相关的CTAdViewDelegate代理方法， 更多详细代理请查看CTADMRAIDView.h文件
+     与插屏相关的CTAdViewDelegate代理方法， 更多详细代理请查看CTADMRAIDView.h文件
      插屏已准备好，可以调用展示接口
     */
-    - (void)CTAdViewDidRecieveInterstitialAd{
-    	NSLog(@"receive CT Interstitial");
-    }
+    - (void)CTAdViewDidRecieveInterstitialAd;
     
     /**
-     请求失败接口(如在同一页面请求banner与插屏，则共享同一个失败接口)
+     请求失败接口(如在同一页面请求条幅广告与插屏，则共享同一个失败接口)
     */
-    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
-    	NSLog(@"request CT ads with error");
-    }
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error;
 
 ```
