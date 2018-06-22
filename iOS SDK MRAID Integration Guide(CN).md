@@ -241,37 +241,9 @@ Use this interface to upload consent from affected users.
 
 ```
 
-<a name="banner">横幅广告）</a>
+<a name="banner">条幅广告</a>
 
 ```
-/**
- 获取条幅广告
- @param slot_id         Banner广告SlotID
- @param delegate        设置遵守 <CTBannerDelegate> 的代理对象
- @param frame           设置广告Frame
- @param isNeedBtn       是否在右上角显示关闭按钮
- @param isTest          是否开启Debug模式，保留参数
- @param success         请求成功回调接口，并返回bannerView对象
- @param failure         请求失败回调接口
- */
-- (void)getBannerADswithSlotId:(NSString *)slot_id
-                      delegate:(id)delegate
-                         frame:(CGRect)frame
-               needCloseButton:(BOOL)isNeedBtn
-                        isTest:(BOOL)isTest
-                       success:(void (^)(UIView *bannerView))success
-                       failure:(void (^)(NSError *error))failure;
-                       
-CTBannerDelegate 代理回调方法
--(void)CTBannerDidClick:(CTBanner*)banner;                  //点击广告
--(void)CTBannerDidIntoLandingPage:(CTBanner*)banner;        //进入落地页
--(void)CTBannerDidLeaveLandingPage:(CTBanner*)banner;       //离开落地页
--(void)CTBannerClosed:(CTBanner*)banner;                    //关闭广告
--(void)CTBannerWillLeaveApplication:(CTBanner*)banner;      //将要离开应用
--(void)CTBannerHtml5Closed:(CTBanner*)banner;               //关闭广告
--(void)CTBannerJumpfail:(CTBanner*)banner;                  //跳转失败
-
-
     /**
     *获取条幅广告
     *@param slot_id         Banner广告SlotID
