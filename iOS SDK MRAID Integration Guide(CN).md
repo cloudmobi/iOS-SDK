@@ -248,7 +248,7 @@ Use this interface to upload consent from affected users.
     *获取条幅广告
     *@param slot_id         Banner广告SlotID
     *@param delegate        设置遵守 <CTAdViewDelegate> 的代理对象
-    *@param adSize          设置广告Frame
+    *@param adSize          设置广告Frame,枚举类型CTADBannerSize:CTADBannerSizeW320H50,CTADBannerSizeW320H100,CTADBannerSizeW300H250
     *@param containerView   设置广告容器
     *@param isTest          是否开启Debug模式，保留参数
     */
