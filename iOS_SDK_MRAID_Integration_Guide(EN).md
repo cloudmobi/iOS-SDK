@@ -200,14 +200,14 @@ For the first time you request rewarded video ads, you may need to try serveral 
     *Get Banner Ad View
     *@param slot_id         Cloud Tech Banner AD ID
     *@param delegate        Set Delegate of Ad event(<CTAdViewDelegate>)
-    *@param adSize          requre Ad Size
+    *@param adSize          Ad Size
     *@param containerView   the view which shows ads on
     *@param isTest          Use test advertisement or not
     */
     
     - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
 
-    CTAdViewDelegate interface which is related to banner, for more detail please check CTAdviewDelegate in CTADMRAIDView.h
+    CTAdViewDelegate interfaces related to banner, for more detail please check CTAdviewDelegate in CTADMRAIDView.h
     //banner ad
     - (void)CTAdViewDidRecieveBannerAd:(CTADMRAIDView*)adView{
         NSLog(@"receive CT banner");
@@ -275,7 +275,7 @@ CTNativeVideoDelegate Callback Delegate
     - (BOOL)mraidInterstitialIsReady;
     
     
-    CTAdViewDelegate interface which is related to interstitial, for more detail please check CTAdviewDelegate in CTADMRAIDView.h
+    CTAdViewDelegate interfaces related to interstitial, for more detail please check CTAdviewDelegate in CTADMRAIDView.h
     //interstitial is ready, call mraidInterstitialShow to show it.
     - (void)CTAdViewDidRecieveInterstitialAd{
     	NSLog(@"receive CT Interstitial");
