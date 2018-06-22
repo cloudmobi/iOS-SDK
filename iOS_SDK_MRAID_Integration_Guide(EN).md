@@ -8,7 +8,6 @@
   - [Native Video](#nativevideo)
   - [New Dynamic Interstitial（need create new dynamic interstitial slot）](#NewInterstitial)
 
-- [Cocoapods Integration](#step2)
 
 
 
