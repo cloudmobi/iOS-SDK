@@ -200,7 +200,7 @@ For the first time you request rewarded video ads, you may need to try serveral 
     *Get Banner Ad View
     *@param slot_id         Cloud Tech Banner AD ID
     *@param delegate        Set Delegate of Ad event(<CTAdViewDelegate>)
-    *@param adSize          Ad Size
+    *@param adSize          Ad size. enum CTADBannerSize:CTADBannerSizeW320H50, CTADBannerSizeW320H100, CTADBannerSizeW300H250
     *@param containerView   the view which shows ads on
     *@param isTest          Use test advertisement or not
     */
@@ -294,17 +294,6 @@ Done!
 
 You are now all set to deliver Cloudmobi Ads within your application!
 
-## <a name="step2">Cocoapods Integration</a>
-* Install CocoaPods and make sure you are running the latest version of CocoaPods by running:
-
-```
-gem install cocoapods
-# (or if the above fails)
-sudo gem install cocoapods
-```
-
-
-* Start Coding! You can check the [SDK Set Up Tutorials](#step1) above.
 
 
 
