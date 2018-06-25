@@ -1,6 +1,6 @@
 ### CloudMobi - iOS CTSDK 对接指南
 
-按照CloudMobi SDK对接指南，将我们的 SDK 集成到您的应用程序，方便您对接！这里引用的源代码可以在我们的公共 [demo](https://github.com/cloudmobi/CloudmobiSSP/blob/master/iOS-SDK-Demo.zip) 存储库中获得。
+按照CloudMobi SDK对接指南，将我们的 SDK 集成到您的应用程序，方便您对接！这里引用的源代码可以在我们的公共 [demo](https://github.com/cloudmobi/iOS-SDK/blob/master/CT_iOS_Demo.zip) 存储库中获得。
 
 ##### 目录
 
@@ -10,12 +10,12 @@
 
 ###### <a name="begin">在您对接SDK之前需要注意以下几点</a>
 
-- [CloudMobi iOS SDK（点击下载）](https://github.com/cloudmobi/CloudmobiSSP/blob/master/(CT)iOS-SDK.zip) 支持iOS7+，并支持32位和64位应用程序
+- [CloudMobi iOS SDK（点击下载）](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip) 支持iOS7+，并支持32位和64位应用程序
 - 集成需要 CloudMobi 账号，所以如果您目前还没有该账号的话，请联系我们的运营人员。
 
 ###### <a name="install">将CloudMobi iOS SDK添加到Xcode项目中</a>
 
-1. 将[CloudMobi iOS SDK](https://github.com/cloudmobi/CloudmobiSSP/blob/master/(CT)iOS-SDK.zip)下载解压之后将 CTSDK.framework 放到 Frameworks 下的 Xcode 中。
+1. 将[CloudMobi iOS SDK](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip)下载解压之后将 CTSDK.framework 放到 Frameworks 下的 Xcode 中。
 
 2. 添加其他的必需的框架
    CloudMobi iOS SDK 需要一些其他本地框架来链接到您的项目，因此请点击您的项目，并前往：
@@ -32,7 +32,7 @@
    - CTSDK.framework
    - libz.tbd
 
-   同时应该检查 [CTSDK](https://github.com/cloudmobi/CloudmobiSSP/blob/master/(CT)iOS-SDK.zip) 框架是否出现在链接框架和库下面。如果先前的拖放步骤没有自动链接，我们可以通过点击 '+' 然后'添加其他'手动添加它。
+   同时应该检查 [CTSDK](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip) 框架是否出现在链接框架和库下面。如果先前的拖放步骤没有自动链接，我们可以通过点击 '+' 然后'添加其他'手动添加它。
 
 3. 添加 -ObjC 链接器标志
    这可以通过导航到构建设置并将 -ObjC 添加到其他链接器标志，前往Build Settings->Other Link Flags 进行添加
@@ -49,7 +49,7 @@
     ```
 
 5. SDK的初始化
-   务必尽快初始化 SDK，以确保广告SDK拉取配置并预先缓存。 对于我们的 [demo](https://github.com/cloudmobi/CloudmobiSSP/blob/master/iOS-SDK-Demo.zip)（以及我们对所有 iOS 项目的建议），我们会将初始化调用添加到主 AppDelegate 上的 didFinishLaunchingWithOptions 方法。
+   务必尽快初始化 SDK，以确保广告SDK拉取配置并预先缓存。 对于我们的 [demo](https://github.com/cloudmobi/iOS-SDK/blob/master/CT_iOS_Demo.zip)（以及我们对所有 iOS 项目的建议），我们会将初始化调用添加到主 AppDelegate 上的 didFinishLaunchingWithOptions 方法。
 
    **注意：**如果您尝试导入 并且找不到它，请删除该引用并再次添加它，并选择“根据需要复制项目”选项。
 
