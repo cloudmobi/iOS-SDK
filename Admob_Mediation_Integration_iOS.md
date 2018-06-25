@@ -57,7 +57,7 @@
 
 ```
 Class Name: GADMAdapterCloudmobi (example)
-Parameter: 260 (Cloudmobi slot id)
+Parameter: 260 (Cloudmobi slot id) 
 ```
 
 -------
