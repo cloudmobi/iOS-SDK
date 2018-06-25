@@ -17,7 +17,7 @@
 - Cloudmobi iOS supports iOS 7.0+;
 - Please make sure you have signed up on the Cloudmobi Platform. If you haven't signed up, please contact us via email: sdk_support@yeahmobi.com
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
-- Please download [our latest SDK](https://github.com/cloudmobi/CloudmobiSSP/raw/master/(CT)iOS-SDK.zip)
+- Please download [our latest SDK](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip)
 
 ## <a name="step1">SDK Set Up Manually</a>
 
@@ -227,7 +227,7 @@ For the first time you request rewarded video ads, you may need to try serveral 
 
 
 ### <a name="nativevideo">Adding the Native Video Ad API in iOS</a>
-iOS SDK supports two ways to use native video. One is like Elements Ad which SDK supports videoview, background image and interface to controll video play or stop. Developers should notice that video won't play in 3g/4g, we should add a background image and play button image(we both offer in delegate function) instead. User click the images to present a custom video controller, with user's permission to play video. The other is like mediaview. We recommend to use mediaview, beacuse developers don't need to worry about the issue, mediaview will do this for you. For more detail you should check our demo.https://github.com/cloudmobi/iOS-SDK/blob/master/iOS%20SDK%20Demo.zip
+iOS SDK supports two ways to use native video. One is like Elements Ad which SDK supports videoview, background image and interface to controll video play or stop. Developers should notice that video won't play in 3g/4g, we should add a background image and play button image(we both offer in delegate function) instead. User click the images to present a custom video controller, with user's permission to play video. The other is like mediaview. We recommend to use mediaview, beacuse developers don't need to worry about the issue, mediaview will do this for you. For more detail you should check our demo.https://github.com/cloudmobi/iOS-SDK/blob/master/CT_iOS_Demo.zip
 ```
 /**
  Get Native video Ad
