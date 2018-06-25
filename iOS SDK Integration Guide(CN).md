@@ -77,7 +77,7 @@ NSString* slotid = @"你的CloudMobi账户当前App下的任意一个广告ID";
 - [元素广告](#native)
 - [应用墙](#Appwall)
 - [激励视频](#rewardvideo)
-- [模板广告（包括条幅广告、插屏广告和原生模板广告）](#template)
+- [条幅广告](#banner)
 - [原生视频广告](#nativevideo)
 - [新插屏广告](#NewInterstitial)
 
@@ -241,103 +241,30 @@ Use this interface to upload consent from affected users.
 
 ```
 
-<a name="template">获取模板广告（包括横幅广告，插屏广告和原生模板广告）</a>
+<a name="banner">条幅广告</a>
 
 ```
-/**
- 获取条幅广告
- @param slot_id         Banner广告SlotID
- @param delegate        设置遵守 <CTBannerDelegate> 的代理对象
- @param frame           设置广告Frame
- @param isNeedBtn       是否在右上角显示关闭按钮
- @param isTest          是否开启Debug模式，保留参数
- @param success         请求成功回调接口，并返回bannerView对象
- @param failure         请求失败回调接口
- */
-- (void)getBannerADswithSlotId:(NSString *)slot_id
-                      delegate:(id)delegate
-                         frame:(CGRect)frame
-               needCloseButton:(BOOL)isNeedBtn
-                        isTest:(BOOL)isTest
-                       success:(void (^)(UIView *bannerView))success
-                       failure:(void (^)(NSError *error))failure;
-                       
-CTBannerDelegate 代理回调方法
--(void)CTBannerDidClick:(CTBanner*)banner;                  //点击广告
--(void)CTBannerDidIntoLandingPage:(CTBanner*)banner;        //进入落地页
--(void)CTBannerDidLeaveLandingPage:(CTBanner*)banner;       //离开落地页
--(void)CTBannerClosed:(CTBanner*)banner;                    //关闭广告
--(void)CTBannerWillLeaveApplication:(CTBanner*)banner;      //将要离开应用
--(void)CTBannerHtml5Closed:(CTBanner*)banner;               //关闭广告
--(void)CTBannerJumpfail:(CTBanner*)banner;                  //跳转失败
+    /**
+    *获取条幅广告
+    *@param slot_id         Banner广告SlotID
+    *@param delegate        设置遵守 <CTAdViewDelegate> 的代理对象
+    *@param adSize          设置广告Frame,枚举类型CTADBannerSize:CTADBannerSizeW320H50,CTADBannerSizeW320H100,CTADBannerSizeW300H250
+    *@param containerView   设置广告容器
+    *@param isTest          是否开启Debug模式，保留参数
+    */
+    
+    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
 
-/**
- 获取插屏广告，并返回InterstitialView对象
- @param slot_id         Interstitial广告SlotID
- @param delegate        设置遵守 <CTInterstitialDelegate> 的代理对象
- @param isFull          设置是否是全屏显示
- @param isTest          是否开启Debug模式，保留参数
- @param success         请求成功回调接口，并返回InterstitialView对象
- @param failure         请求失败回调接口
- */
-- (void)preloadInterstitialWithSlotId:(NSString *)slot_id
-                             delegate:(id)delegate
-                         isFullScreen:(BOOL)isFull
-                               isTest:(BOOL)isTest
-                              success:(void (^)(UIView *InterstitialView))success
-                              failure:(void (^)(NSError *error))failure;
-/**
- 展示插屏
- */
-- (BOOL)interstitialShow;
-/**
- 关闭插屏
- */
-- (BOOL)interstitialClose;
-/**
- Interstitial Screen Direction
- 如果使用了interstitialShow来展示广告，你可以通过以下接口来设置横竖屏
- */
-- (void)ScreenIsVerticalScreen:(BOOL)isVerticalScreen;
-/**
- 通过Viewcontroller的形式展示广告
- */
-- (BOOL)interstitialShowWithControllerStyleFromRootViewController:(UIViewController *)rootViewController;
+    /**
+     与条幅广告相关的CTAdViewDelegate代理方法， 更多详细代理请查看CTADMRAIDView.h文件
+     条幅广告已准备好
+    */
+    - (void)CTAdViewDidRecieveBannerAd:(CTADMRAIDView*)adView;
+    /**
+     条幅广告获取失败
+    */
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error;
 
-CTInterstitialDelegate 代理回调方法
--(void)CTInterstitialDidClick:(CTInterstitial*)interstitialAD;              //点击广告
--(void)CTInterstitialDidIntoLandingPage:(CTInterstitial*)interstitialAD;    //进入落地页
--(void)CTInterstitialDidLeaveLandingPage:(CTInterstitial*)interstitialAD;   //离开落地页
--(void)CTInterstitialClosed:(CTInterstitial*)interstitialAD;                //关闭插屏
--(void)CTInterstitialWillLeaveApplication:(CTInterstitial*)interstitialAD;  //离开应用
--(void)CTInterstitialJumpfail:(CTInterstitial*)interstitialAD;              //跳转失败
-
-/**
- 请求NATemplate广告，并返回NaTemplateView对象
- @param slot_id         NATemplate广告SlotID
- @param delegate        设置遵守 <CTNaTemplateDelegate> 的代理对象
- @param frame           设置广告Frame
- @param isNeedBtn       是否在右上角显示关闭按钮
- @param isTest          是否开启Debug模式，保留参数
- @param success         请求成功回调接口，并返回NaTemplateView对象
- @param failure         请求失败回调接口
- */
-- (void)getNaTemplateADswithSlotId:(NSString *)slot_id
-                          delegate:(id)delegate
-                             frame:(CGRect)frame
-                   needCloseButton:(BOOL)isNeedBtn
-                            isTest:(BOOL)isTest
-                           success:(void (^)(UIView *NaTemplateView))success
-                           failure:(void (^)(NSError *error))failure;
-                           
-CTNaTemplateDelegate 代理回调方法
--(void)CTNaTemplateDidClick:(CTNaTemplate*)naTemplate;              //点击广告
--(void)CTNaTemplateDidIntoLandingPage:(CTNaTemplate*)naTemplate;    //进入落地页
--(void)CTNaTemplateDidLeaveLandingPage:(CTNaTemplate*)naTemplate;   //离开落地页
--(void)CTNaTemplateClosed:(CTNaTemplate*)naTemplate;                //关闭广告
--(void)CTNaTemplateWillLeaveApplication:(CTNaTemplate*)naTemplate;  //将要离开应用
--(void)CTNaTemplateHtml5Closed:(CTNaTemplate*)naTemplate;           //关闭模板
--(void)CTNaTemplateJumpfail:(CTNaTemplate*)naTemplate;              //跳转失败
 ```
 <a name="nativevideo">获取原生视频广告</a>
 
@@ -365,55 +292,34 @@ CTNativeVideoDelegate 代理回调方法
 <a name="NewInterstitial">获取插屏(New)</a>
 
 ```
-  /**
-   预加载插屏广告.
- 
- 参数 slot_id         广告位
- 参数 delegate        广告代理对象 <CTADInterstitialDelegate>
- 参数 isTest          是否是测试模式(填入NO即可) 
- */
-- (void)preloadInterstitialAdWithSlotId:(NSString *)slot_id
-                             delegate:(id)delegate
-                               isTest:(BOOL)isTest;
+    /**
+     获取插屏广告
+     @param slot_id         Interstitial广告SlotID
+     @param delegate        设置遵守 <CTAdViewDelegate> 的代理对象
+     @param isTest          是否开启Debug模式，保留参数
+    */
+    - (void)preloadMRAIDInterstitialAdWithSlotId:(NSString *)slotid delegate:(id)delegate isTest:(BOOL)isTest;
 
-/**
- 展示差评广告,会默认在app最上层UIViewController上present出广告
- 在预加载接口返回成功后调用
- */
-- (void)interstitialAdShow;
+    /**
+     展示插屏接口
+    */
+    - (void)mraidInterstitialShow;
 
-/**
- 展示差评广告,会在app传入的UIViewController上present出广告,如果填写nil,则与interstitialAdShow功能相同.
- 在预加载接口返回成功后调用
- */
-- (void)interstitialAdShowWithController:(UIViewController *)VC;
-
-/**
-检查广告是否准备好了,如果返回了YES 就可以调用广告展示接口了.返回NO则广告没有准备好
- */
-- (BOOL)interstitialAdIsReady;
-
-广告返回代理接口<CTADInterstitialDelegate>,需app实现
-
-//广告获取成功
--(void)CTADInterstitialGetAdSuccess;
-
-//广告获取失败
--(void)CTADInterstitialGetAdFailed:(NSError *)error;
-
-//广告展示失败
-- (void)CTADInterstitialAdShowFailed:(NSError *)error;
-
-//广告被点击
--(void)CTADInterstitialDidClick;
-
-//广告跳到落地页
-- (void)CTADInterstitialDidIntoLandingPage;
-
-//广告跳往落地页失败
-- (void)CTADInterstitialJumpFailed;
-
-//广告被关闭
--(void)CTADInterstitialClosed;
+    /**
+     检查插屏广告是否准备好
+    */
+    - (BOOL)mraidInterstitialIsReady;
+    
+    
+    /**
+     与插屏相关的CTAdViewDelegate代理方法， 更多详细代理请查看CTADMRAIDView.h文件
+     插屏已准备好，可以调用展示接口
+    */
+    - (void)CTAdViewDidRecieveInterstitialAd;
+    
+    /**
+     请求失败接口(如在同一页面请求条幅广告与插屏，则共享同一个失败接口)
+    */
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error;
 
 ```
