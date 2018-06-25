@@ -5,11 +5,9 @@
   - [Rewarded Video](#rewardedvideo)
   - [Native](#native)
   - [Banner](#banner)
-  - [Native Template](#nativetemplate)
   - [Native Video](#nativevideo)
   - [New Dynamic Interstitial（need create new dynamic interstitial slot）](#NewInterstitial)
 
-- [Cocoapods Integration](#step2)
 
 
 
@@ -198,46 +196,27 @@ For the first time you request rewarded video ads, you may need to try serveral 
 
 ```
     /**
-     To get the Banner ads 
-     @param slot_id         Banner Ad SlotID
-     @param delegate        declare that ViewController implements the CTBannerDelegate protocol
-     @param frame           Set Ad Frame
-     @param isNeedBtn       is need Close button
-     @param isTest          Debug Mode , Retention parameters
-     @param success         Load Ad success callback
-     @param failure         Load Ad Failed callback
-     */
-    - (void)getBannerADswithSlotId:(NSString *)slot_id
-                          delegate:(id)delegate
-                             frame:(CGRect)frame
-                   needCloseButton:(BOOL)isNeedBtn
-                            isTest:(BOOL)isTest
-                           success:(void (^)(UIView *bannerView))success
-                           failure:(void (^)(NSError *error))failure;
-                           
-    CTBannerDelegate Callback interface
-    - (void)CTBannerDidClick:(CTBanner*)banner {
-        NSLog(@""click Ad");
-    }
-    - (void)CTBannerDidIntoLandingPage:(CTBanner*)banner {
-        NSLog(@"did Into LandingPage");
-    }
-    - (void)CTBannerDidLeaveLandingPage:(CTBanner*)banner {
-        NSLog(@"did Leave LandingPage");
-    }
-    - (void)CTBannerClosed:(CTBanner*)banner {
-        NSLog(@"closed ad");
-    }
-    - (void)CTBannerWillLeaveApplication:(CTBanner*)banner {
-        NSLog(@"will leave Application");
-    }
-    - (void)CTBannerHtml5Closed:(CTBanner*)banner {
-        NSLog(@"closed html5 ad");
-    }
-    - (void)CTBannerJumpfail:(CTBanner *)banner {
-        NSLog(@"click ad Jump App store failed");
-    }
+    *Get Banner Ad View
+    *@param slot_id         Cloud Tech Banner AD ID
+    *@param delegate        Set Delegate of Ad event(<CTAdViewDelegate>)
+    *@param adSize          Ad size. enum CTADBannerSize:CTADBannerSizeW320H50, CTADBannerSizeW320H100, CTADBannerSizeW300H250
+    *@param containerView   the view which shows ads on
+    *@param isTest          Use test advertisement or not
+    */
+    
+    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
 
+    CTAdViewDelegate interfaces related to banner, for more detail please check CTAdviewDelegate in CTADMRAIDView.h
+    //banner ad
+    - (void)CTAdViewDidRecieveBannerAd:(CTADMRAIDView*)adView{
+        NSLog(@"receive CT banner");
+    }
+    //error while request ads.
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
+        NSLog(@"request CT ads with error");
+    }
+    
+    
 ```
 
 
@@ -246,53 +225,6 @@ For the first time you request rewarded video ads, you may need to try serveral 
     
     
 
-
-### <a name="nativetemplate">Adding the Native Template Ad API in iOS</a>
-
-```
-
-/**
-     To get the Native Template ads
-     @param slot_id         NATemplate Ad SlotID
-     @param delegate        declare that ViewController implements the CTNaTemplateDelegate protocol
-     @param frame           Set Ad Frame
-     @param isNeedBtn       is need Close button
-     @param isTest          Debug Mode , Retention parameters
-     @param success         Load Ad success callback
-     @param failure         Load Ad failed callback
-     */
-    - (void)getNaTemplateADswithSlotId:(NSString *)slot_id
-                              delegate:(id)delegate
-                                 frame:(CGRect)frame
-                       needCloseButton:(BOOL)isNeedBtn
-                                isTest:(BOOL)isTest
-                               success:(void (^)(UIView *NaTemplateView))success
-                               failure:(void (^)(NSError *error))failure;
-                               
-    CTNaTemplateDelegate Callback Delegate 
-    - (void)CTNaTemplateDidClick:(CTNaTemplate*)naTemplate {
-        NSLog(@"click Ad");
-    }
-    - (void)CTNaTemplateDidIntoLandingPage:(CTNaTemplate*)naTemplate {
-        NSLog(@"did Into LandingPage");
-    }
-    - (void)CTNaTemplateDidLeaveLandingPage:(CTNaTemplate*)naTemplate {
-        NSLog(@"did Leave LandingPage");
-    }
-    - (void)CTNaTemplateClosed:(CTNaTemplate*)naTemplate {
-        NSLog(@"closed ad");
-    }
-    - (void)CTNaTemplateWillLeaveApplication:(CTNaTemplate*)naTemplate {
-        NSLog(@"will leave Application");
-    }
-    - (void)CTNaTemplateHtml5Closed:(CTNaTemplate*)naTemplate {
-        NSLog(@"closed html5 ad");
-    }
-    - (void)CTNaTemplateJumpfail:(CTNaTemplate *)naTemplate {
-        NSLog(@"click ad Jump App store failed");
-    }
-
-```
 
 ### <a name="nativevideo">Adding the Native Video Ad API in iOS</a>
 iOS SDK supports two ways to use native video. One is like Elements Ad which SDK supports videoview, background image and interface to controll video play or stop. Developers should notice that video won't play in 3g/4g, we should add a background image and play button image(we both offer in delegate function) instead. User click the images to present a custom video controller, with user's permission to play video. The other is like mediaview. We recommend to use mediaview, beacuse developers don't need to worry about the issue, mediaview will do this for you. For more detail you should check our demo.https://github.com/cloudmobi/iOS-SDK/blob/master/iOS%20SDK%20Demo.zip
@@ -301,8 +233,8 @@ iOS SDK supports two ways to use native video. One is like Elements Ad which SDK
  Get Native video Ad
  Call this interface to get Native Video AD.
  Because GDPR, you need to add touch events to the ad choices in the corner. user click the ad choices in the corner and it can be opened by safai choices_link_url.Ad choices uses ADsignImage object
- @param slot_id         You should use Native Video AD ID or you wouldn't get ads.
- @param delegate        Set Delegate of Ads event (<CTNativeVideoDelegate>)
+ @param slot_id         You should use Native Video AD ID or you wouldn't get ads.
+ @param delegate        Set Delegate of Ads event (<CTNativeVideoDelegate>)
  @param WHRate          Set Image Rate
  @param isTest          Use test advertisement or not
  */
@@ -312,79 +244,47 @@ iOS SDK supports two ways to use native video. One is like Elements Ad which SDK
                              isTest:(BOOL)isTest;
 			  
 CTNativeVideoDelegate Callback Delegate
--(void)CTNativeVideoLoadSuccess:(CTNativeVideoModel *)nativeVideoModel;  //Advertisement load success.
--(void)CTNativeVideoLoadFailed:(NSError *)error;                         //Advertisement load failed
+-(void)CTNativeVideoLoadSuccess:(CTNativeVideoModel *)nativeVideoModel;  //Advertisement load success.
+-(void)CTNativeVideoLoadFailed:(NSError *)error;                         //Advertisement load failed
 ```
 
 ### <a name="NewDynamicInterstitial">Adding the New Dynamic Interstitial Ad API in iOS</a>
 
 ```
-/**
- Preload Interstitial Ad
- Call this interface preload Interstitial AD.
+    /**
+     Preload Interstitial Ad
+     Call this interface preload Interstitial AD.
  
- @param slot_id         Cloud Tech AD ID
- @param delegate        Set Delegate of Ads event (<CTADInterstitialDelegate>)
- @param isTest          Use test advertisement or not
- */
-- (void)preloadInterstitialAdWithSlotId:(NSString *)slot_id
-                             delegate:(id)delegate
-                               isTest:(BOOL)isTest;
+     @param slot_id         Cloud Tech AD ID
+     @param delegate        Set Delegate of Ads event (<CTAdViewDelegate>)
+     @param isTest          Use test advertisement or not
+     */
+    - (void)preloadMRAIDInterstitialAdWithSlotId:(NSString *)slotid delegate:(id)delegate isTest:(BOOL)isTest;
 
-/**
- Show interstitial ad
- Call this method after preload Interstitial ad success
- */
-- (void)interstitialAdShow;
+    /**
+     Show interstitial ad
+     Call this method after preload Interstitial ad success
+     */
+    - (void)mraidInterstitialShow;
 
-/**
- Show interstitial ad with user vc present
- Call this method after preload Interstitial ad success
- */
-- (void)interstitialAdShowWithController:(UIViewController *)VC;
-
-/**
- Check interstitial ad to be Ready
- Call this method before show ad
- */
-- (BOOL)interstitialAdIsReady;
-			  
-CTADInterstitialDelegate Callback Delegate
-
-/**
- * Get Ad Success.
- */
--(void)CTADInterstitialGetAdSuccess;
-
-/**
- * Get Ad Error.
- */
--(void)CTADInterstitialGetAdFailed:(NSError *)error;
-
-/**
- * User click the advertisement.
- */
--(void)CTADInterstitialDidClick;
-
-/**
- * Ad show error.
- */
-- (void)CTADInterstitialAdShowFailed:(NSError *)error;
-
-/**
- * jump to LandingPage.
- */
-- (void)CTADInterstitialDidIntoLandingPage;
-
-/**
- * jump to LandingPage failed.
- */
-- (void)CTADInterstitialJumpFailed;
-
-/**
- * User close the advertisement.
- */
--(void)CTADInterstitialClosed;     
+    /**
+     Check interstitial ad to be Ready
+     Call this method before show ad
+     */
+    - (BOOL)mraidInterstitialIsReady;
+    
+    
+    CTAdViewDelegate interfaces related to interstitial, for more detail please check CTAdviewDelegate in CTADMRAIDView.h
+    //interstitial is ready, call mraidInterstitialShow to show it.
+    - (void)CTAdViewDidRecieveInterstitialAd{
+    	NSLog(@"receive CT Interstitial");
+    }
+    
+    //error while request ads. (share the same error delegate interface with banner)
+    - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
+    	NSLog(@"request CT ads with error");
+    }
+    
 ```
 **IMPORTANT: If you got the error message:"not interstitial slot",please check if the ad format in SSP is the same with the API in SDK.
 
@@ -392,22 +292,5 @@ CTADInterstitialDelegate Callback Delegate
 Done!
 
 You are now all set to deliver Cloudmobi Ads within your application!
-
-## <a name="step2">Cocoapods Integration</a>
-* Install CocoaPods and make sure you are running the latest version of CocoaPods by running:
-
-```
-gem install cocoapods
-# (or if the above fails)
-sudo gem install cocoapods
-```
-
-
-* Start Coding! You can check the [SDK Set Up Tutorials](#step1) above.
-
-
-
-
-
 
 
