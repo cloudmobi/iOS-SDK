@@ -255,6 +255,8 @@ CTNativeVideoDelegate Callback Delegate
 
 ### <a name="NewDynamicInterstitial">Adding the New Dynamic Interstitial Ad API in iOS</a>
 
+Interstitial ads are full-screen ads that cover the interface of the host app.
+
 ```
     /**
      Preload Interstitial Ad
@@ -293,6 +295,10 @@ CTNativeVideoDelegate Callback Delegate
 ```
 **IMPORTANT: If you got the error message:"not interstitial slot",please check if the ad format in SSP is the same with the API in SDK.
 
+when you successfully integrated the New Dynamic Interstitial Ad, you will see the ads are like this
+
+![image](https://user-images.githubusercontent.com/20314643/41895879-b4536200-7955-11e8-9847-587f175c4a54.png)
+![image](https://user-images.githubusercontent.com/20314643/41895941-e0c6ad1a-7955-11e8-9393-ed91e4a4906f.png)
 
 Done!
 
