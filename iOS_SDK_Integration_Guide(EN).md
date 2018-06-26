@@ -225,8 +225,12 @@ Cloudmobi SDK supports three ad sizes banner to be used in your APP.
     
     
 ```
+when you successfully integrated, you will see.
 
 
+![image](https://user-images.githubusercontent.com/20314643/41894684-4177c238-7952-11e8-8d7b-1ca5861ba75b.png)
+![image](https://user-images.githubusercontent.com/20314643/41894739-83168c9c-7952-11e8-84fc-80c340f455dd.png)
+![image](https://user-images.githubusercontent.com/20314643/41894578-e9bf0934-7951-11e8-8d13-5312600dceb1.png)
 
 
     
