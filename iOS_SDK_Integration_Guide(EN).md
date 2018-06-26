@@ -193,6 +193,13 @@ For the first time you request rewarded video ads, you may need to try serveral 
 
 ### <a name="banner">Adding the Banner Ad API in iOS</a>
 
+Cloudmobi SDK supports three ad sizes banner to be used in your APP.
+
+|Ad format| Size | Reconmmandation |
+|--|--|--|
+|CTADBannerSizeW320H50|320x50| highly reconmmanded for mobile phone APP |
+|CTADBannerSizeW320H100|320x100|recommanded for tablets or larger devices| 
+|CTADBannerSizeW300H250|300x250|recommanded for tablets or moblie phone |
 
 ```
     /**
