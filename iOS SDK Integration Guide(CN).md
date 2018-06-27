@@ -15,7 +15,14 @@
 
 ###### <a name="install">将CloudMobi iOS SDK添加到Xcode项目中</a>
 
-1. 将[CloudMobi iOS SDK](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip)下载解压之后将 CTSDK.framework 放到 Frameworks 下的 Xcode 中。
+1. 添加CTSDK
+```
+  1.1 使用 Cocoapod
+  i:将以下代码行添加到项目的 Podfile 文件中：pod 'FBAudienceNetwork'
+  ii:运行 pod install 命令。
+  1.2 手动下载SDK
+  将[CloudMobi iOS SDK](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip)下载解压之后将 CTSDK.framework 放到 Frameworks 下的 Xcode 中。
+```
 
 2. 添加其他的必需的框架
    CloudMobi iOS SDK 需要一些其他本地框架来链接到您的项目，因此请点击您的项目，并前往：
