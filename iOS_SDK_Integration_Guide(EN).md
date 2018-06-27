@@ -7,7 +7,7 @@
   - [Banner](#banner)
   - [Native Video](#nativevideo)
   - [New Dynamic Interstitial（need create new dynamic interstitial slot）](#NewInterstitial)
-
+  - [AppWall](#Appwall)
 
 
 
@@ -18,6 +18,10 @@
 - Please make sure you have signed up on the Cloudmobi Platform. If you haven't signed up, please contact us via email: sdk_support@yeahmobi.com
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
 - Please download [our latest SDK](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip)
+
+## <a name="step1">SDK Set Up Use CocoaPods </a>
+* 1. Add the following line of code to the project of Podfile file : pod 'CTSDK' 
+* 2. Running a 'pod install' command
 
 ## <a name="step1">SDK Set Up Manually</a>
 
@@ -290,6 +294,66 @@ Interstitial ads are full-screen ads that cover the interface of the host app.
     }
     
 ```
+
+### <a name="Appwall">Adding the Appwall Ad API in iOS</a>
+
+Appwall ads are full-screen ads that cover the interface of the host app.
+
+```
+    /**
+     Get AppWall ViewController
+     First,you must should Call preloadAppWallWithSlotID method,Then get successs,call showAppWallViewController method show Appwall！
+ 
+     @param slot_id         Cloud Tech Native AD ID
+     @param customColor     If you want set custom UI,you should create CTCustomColor object
+     param delegate        Set Delegate of Ads event (<CTAppWallDelegate>)
+     @param isTest          Use test advertisement or not
+     @param success         The request is successful Block
+     @param failure         The request failed Block, retuen error
+     */
+    - (void)preloadAppWallWithSlotID:(NSString *)slot_id
+                     customColor:(CTCustomColor *)customColor
+                        delegate:(id)delegate
+                          isTest:(BOOL)isTest
+                         success:(void(^)())success
+                         failure:(void(^)(NSError *error))failure;
+			 
+     /**
+     Get App Wall ViewController
+
+     @return AppWallViewController
+     */
+     - (UIViewController *)showAppWallViewController;
+
+     CTAppWallDelegate interfaces related to Appwall, for more detail please check CTAppWallDelegate in CTADExternalDelegate.h
+     
+     /**
+     * User click the advertisement.
+     */
+    -(void)CTAppWallDidClick:(CTNativeAd *)nativeAd;
+    /**
+     * Advertisement landing page will show.
+     */
+     -(void)CTAppWallDidIntoLandingPage:(CTNativeAd *)nativeAd;
+    /**
+     * User left the advertisement landing page.
+     */
+    -(void)CTAppWallDidLeaveLandingPage:(CTNativeAd *)nativeAd;
+    /**
+     * Leave App
+     */
+    -(void)CTAppWallWillLeaveApplication:(CTNativeAd *)nativeAd;
+    /**
+     * User close the advertisement.
+     */
+    -(void)CTAppWallClosed;
+    /**
+     * Jump failure
+     */
+    -(void)CTAppWallJumpfail:(CTNativeAd*)nativeAd;
+
+```
+
 **IMPORTANT: If you got the error message:"not interstitial slot",please check if the ad format in SSP is the same with the API in SDK.
 
 when you successfully integrated the New Dynamic Interstitial Ad, you will see the ads are like this
