@@ -1,7 +1,8 @@
 # Getting Started with the Cloudmobi iOS SDK
 
 - [Before You Start](#start)
-- [SDK Set Up Manually](#step1)
+- [SDK Set Up Use CocoaPods](#step1)
+- [SDK Set Up Manually](#step2)
   - [Rewarded Video](#rewardedvideo)
   - [Native](#native)
   - [Banner](#banner)
@@ -23,7 +24,7 @@
 * 1. Add the following line of code to the project of Podfile file : pod 'CTSDK' 
 * 2. Running a 'pod install' command
 
-## <a name="step1">SDK Set Up Manually</a>
+## <a name="step2">SDK Set Up Manually</a>
 
 * 1. Unzip the SDK package and drop CTSDK.framework k into your Xcode project.
 
