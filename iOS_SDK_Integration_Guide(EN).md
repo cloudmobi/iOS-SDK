@@ -7,7 +7,7 @@
   - [Native](#native)
   - [Banner](#banner)
   - [Native Video](#nativevideo)
-  - [New Dynamic Interstitial（need create new dynamic interstitial slot）](#NewInterstitial)
+  - [New Dynamic Interstitial（need create new dynamic interstitial slot）](#interstitial)
   - [AppWall](#Appwall)
 
 
@@ -255,7 +255,7 @@ CTNativeVideoDelegate Callback Delegate
 -(void)CTNativeVideoLoadFailed:(NSError *)error;                         //Advertisement load failed
 ```
 
-### <a name="NewDynamicInterstitial">Adding the New Dynamic Interstitial Ad API in iOS</a>
+### <a name="interstitial">Adding the New Dynamic Interstitial Ad API in iOS</a>
 
 Interstitial ads are full-screen ads that cover the interface of the host app.
 
