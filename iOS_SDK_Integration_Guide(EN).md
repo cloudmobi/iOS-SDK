@@ -193,7 +193,7 @@ For the first time you request rewarded video ads, you may need to try serveral 
     }
 
 ```
-
+![image](https://user-images.githubusercontent.com/20314643/42366521-f9be786c-8133-11e8-981f-097d55e387c8.png)
 
 
 ### <a name="banner">Adding the Banner Ad API in iOS</a>
@@ -230,8 +230,10 @@ Cloudmobi SDK supports three ad sizes banner to be used in your APP.
     
     
 ```
+when you successfully integrated the Banner Ad, you will see the ads are like this
 
 
+![-1](https://user-images.githubusercontent.com/20314643/42366029-b6289f2a-8132-11e8-9c3e-86557d164d85.png)
 
 ### <a name="nativevideo">Adding the Native Video Ad API in iOS</a>
 iOS SDK supports two ways to use native video. One is like Elements Ad which SDK supports videoview, background image and interface to controll video play or stop. Developers should notice that video won't play in 3g/4g, we should add a background image and play button image(we both offer in delegate function) instead. User click the images to present a custom video controller, with user's permission to play video. The other is like mediaview. We recommend to use mediaview, beacuse developers don't need to worry about the issue, mediaview will do this for you. For more detail you should check our demo.https://github.com/cloudmobi/iOS-SDK/blob/master/CT_iOS_Demo.zip
@@ -254,6 +256,8 @@ CTNativeVideoDelegate Callback Delegate
 -(void)CTNativeVideoLoadSuccess:(CTNativeVideoModel *)nativeVideoModel;  //Advertisement load success.
 -(void)CTNativeVideoLoadFailed:(NSError *)error;                         //Advertisement load failed
 ```
+
+![image](https://user-images.githubusercontent.com/20314643/42367439-d567e9be-8136-11e8-85df-c9eeacf270d9.png)
 
 ### <a name="interstitial">Adding the New Dynamic Interstitial Ad API in iOS</a>
 
@@ -363,6 +367,7 @@ Appwall ads are full-screen ads that cover the interface of the host app.
     -(void)CTAppWallJumpfail:(CTNativeAd*)nativeAd;
 
 ```
+![image](https://user-images.githubusercontent.com/20314643/42366246-47526c9c-8133-11e8-963c-bd0eb7a3e1a6.png)
 
 
 Done!
