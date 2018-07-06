@@ -193,7 +193,7 @@ For the first time you request rewarded video ads, you may need to try serveral 
     }
 
 ```
-![image](https://user-images.githubusercontent.com/20314643/42366521-f9be786c-8133-11e8-981f-097d55e387c8.png)
+
 
 
 ### <a name="banner">Adding the Banner Ad API in iOS</a>
@@ -234,6 +234,8 @@ when you successfully integrated the Banner Ad, you will see the ads are like th
 
 
 ![-1](https://user-images.githubusercontent.com/20314643/42366029-b6289f2a-8132-11e8-9c3e-86557d164d85.png)
+![320x100](https://user-images.githubusercontent.com/20314643/42370991-c4188812-8140-11e8-80e9-ab6947c12e92.png)
+![300x250](https://user-images.githubusercontent.com/20314643/42370999-c74139f8-8140-11e8-91ff-ba0cdb0ae08a.png)
 
 ### <a name="nativevideo">Adding the Native Video Ad API in iOS</a>
 iOS SDK supports two ways to use native video. One is like Elements Ad which SDK supports videoview, background image and interface to controll video play or stop. Developers should notice that video won't play in 3g/4g, we should add a background image and play button image(we both offer in delegate function) instead. User click the images to present a custom video controller, with user's permission to play video. The other is like mediaview. We recommend to use mediaview, beacuse developers don't need to worry about the issue, mediaview will do this for you. For more detail you should check our demo.https://github.com/cloudmobi/iOS-SDK/blob/master/CT_iOS_Demo.zip
