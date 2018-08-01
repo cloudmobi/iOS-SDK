@@ -2,7 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
-| 3.0.0   |  2018-06-25  | * SDK release Mraid Banner and Interstitial ad <br>* Before delete the banner&Interstitial of the interface |
+| 3.0.0   |  2018-06-25  | * New Banner and interstitial ad format * Banner and interstitial API updates * Interstitial ads supports video and picture and must be fullscreen |
 | 2.8.0   |  2018-05-23  | * SDK GDPR compliant and upgraded the integration Guide on how to set an ad choices in the corner about the information you shared with us|
 | 2.6.3   |  2018-03-02  | * fixed the issue openurl bug <br>* move files to cache <br>  * support using the downloaded video files after update the new version SDK |
 | 2.6.0   |  2018-02-08  | * fixed the issue faild get the location info <br> * optimize the interact in rewarded video |
