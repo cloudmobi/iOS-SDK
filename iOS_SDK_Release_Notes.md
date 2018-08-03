@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 3.0.8   |  2018-08-03  | * rewarded video ads supports playable ads |
 | 3.0.0   |  2018-06-25  | * New Banner and interstitial ad format </br>* Banner and interstitial API updates </br> * Interstitial ads supports video and picture and must be fullscreen |
 | 2.8.0   |  2018-05-23  | * SDK GDPR compliant and upgraded the integration Guide on how to set an ad choices in the corner about the information you shared with us|
 | 2.6.3   |  2018-03-02  | * fixed the issue openurl bug <br>* move files to cache <br>  * support using the downloaded video files after update the new version SDK |
