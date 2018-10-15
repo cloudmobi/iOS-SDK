@@ -193,7 +193,20 @@ For the first time you request rewarded video ads, you may need to try serveral 
     }
 
 ```
+```
+sample code:
+[[CTService shareManager] getNativeADswithSlotId:slotID delegate:self imageWidthHightRate:CTImageWHRateOnePointNineToOne isTest:YES success:^(CTNativeAdModel *nativeModel) {
+            CTView *ccview = [[CTView alloc]initWithFrame:CGRectMake(x, y, width, height)];
+            ccview.delegate = self;
+            [ccview setValuesWith:nativeModel];
+            [self.adView addSubview:ccview];
+            valueForKey:@"adTransmitModel"] valueForKey:@"adid"]]];
+            [self setButtonState:self.loadBtn allowToclick:YES];
+            [self setButtonState:self.showBtn allowToclick:YES];
+        } failure:^(NSError *error) {
 
+        }]
+```
 
 
 ### <a name="banner">Adding the Banner Ad API in iOS</a>
