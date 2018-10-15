@@ -54,7 +54,7 @@ PRO TIP: Checkmark the Copy items if needed option. This creates a local copy of
         return YES;
 }
 ```
-**If you have rewarded video ads in your app, please make sure to use the rewarded video slot id for Initialization.Or else you will never got any rewarded video ads.**
+**Please make sure to initialize Cloudmobi SDK before doing anything.**
 
 * 5. Add your Slot ID .
 
