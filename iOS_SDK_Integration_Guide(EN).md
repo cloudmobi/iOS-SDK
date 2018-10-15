@@ -141,7 +141,7 @@ For the first time you request rewarded video ads, you may need to try serveral 
 
 ```
     /**
-     * To get the Native ads , Your Custom Ad View should inherit CTNativeAd 
+     * To get the Native ads , Your custom AD View should inherit CTNativeAd 
      * Because GDPR, you need to add touch events to the ad choices in the corner. user click the ad choices in the corner and it can be opened by safai choices_link_url.Ad choices uses ADsignImage object
      * @param slot_Id       Native Ad SlotID
      * @param delegate      declare that ViewController implements the CTNativeAdDelegate protocol
@@ -157,7 +157,7 @@ For the first time you request rewarded video ads, you may need to try serveral 
                       success:(void (^)(CTNativeAdModel *nativeModel))success
                       failure:(void (^)(NSError *error))failure;
     /**
-     * To get the multiple Native ads , Your Custom Ad View should inherit CTNativeAd 
+     * To get the multiple Native ads , Your custom AD View should inherit CTNativeAd 
      * Because GDPR, you need to add touch events to the ad choices in the corner. user click the ad choices in the corner and it can be opened by safai choices_link_url.Ad choices uses ADsignImage object
      * @param slot_Id       Native Ad SlotID
      * @param num           Ad numbers
