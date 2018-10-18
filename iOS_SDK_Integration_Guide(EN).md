@@ -211,11 +211,10 @@ Cloudmobi SDK supports three ad sizes banner to be used in your APP.
     *@param slot_id         Cloud Tech Banner AD ID
     *@param delegate        Set Delegate of Ad event(<CTAdViewDelegate>)
     *@param adSize          Ad size. enum CTADBannerSize:CTADBannerSizeW320H50, CTADBannerSizeW320H100, CTADBannerSizeW300H250
-    *@param containerView   the view which shows ads on
     *@param isTest          Use test advertisement or not
     */
     
-    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
+    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size isTest:(BOOL)isTest;
 
     CTAdViewDelegate interfaces related to banner, for more detail please check CTAdviewDelegate in CTADMRAIDView.h
     //banner ad
@@ -226,7 +225,10 @@ Cloudmobi SDK supports three ad sizes banner to be used in your APP.
     - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
         NSLog(@"request CT ads with error");
     }
-    
+    //click ad
+    - (void)CTAdViewClicked:(CTADMRAIDView*)adView{
+        NSLog(@"user click ad");
+    }
     
 ```
 when you successfully integrated the Banner Ad, you will see the ads are like this
@@ -297,6 +299,11 @@ Interstitial ads are full-screen ads that cover the interface of the host app.
     //error while request ads. (share the same error delegate interface with banner)
     - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error{
     	NSLog(@"request CT ads with error");
+    }
+    
+    //click ad
+    - (void)CTAdViewClicked:(CTADMRAIDView*)adView{
+        NSLog(@"user click ad");
     }
     
 ```
