@@ -67,6 +67,15 @@ Parameter: 260 (Cloudmobi slot id)
 #### 5. Copy GADMAdapterCloudmobi.h and GADMAdapterCloudmobi.m into your code folder
 
 Add files to your project !!!
+You should Call CTSDK init Interface in Application Start!!!
+
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+      [[CTService shareManager] loadRequestGetCTSDKConfigBySlot_id:You_SlotId];
+      return YES;
+}
+``` 
+
 
 #### 6. Admob Rewarded Video Integration 
 
