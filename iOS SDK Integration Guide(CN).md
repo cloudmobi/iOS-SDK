@@ -255,7 +255,7 @@ Use this interface to upload consent from affected users.
     *@param isTest          是否开启Debug模式，保留参数
     */
     
-    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size container:(UIView*)containerView isTest:(BOOL)isTest;
+    - (void)getMRAIDBannerAdWithSlot:(NSString*)slotid delegate:(id)delegate adSize:(CTADBannerSize)size isTest:(BOOL)isTest;
 
     /**
      与条幅广告相关的CTAdViewDelegate代理方法， 更多详细代理请查看CTADMRAIDView.h文件
@@ -266,6 +266,10 @@ Use this interface to upload consent from affected users.
      条幅广告获取失败
     */
     - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error;
+    /**
+     条幅广告点击回调
+    */
+    - (void)CTAdViewClicked:(CTADMRAIDView*)adView;
 
 ```
 <a name="nativevideo">获取原生视频广告</a>
@@ -323,5 +327,10 @@ CTNativeVideoDelegate 代理回调方法
      请求失败接口(如在同一页面请求条幅广告与插屏，则共享同一个失败接口)
     */
     - (void)CTAdView:(CTADMRAIDView*)adView didFailToReceiveAdWithError:(NSError*)error;
+    
+    /**
+     插屏广告点击回调
+    */
+    - (void)CTAdViewClicked:(CTADMRAIDView*)adView;
 
 ```
