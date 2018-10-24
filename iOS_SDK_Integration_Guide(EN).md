@@ -229,6 +229,10 @@ Cloudmobi SDK supports three ad sizes banner to be used in your APP.
     - (void)CTAdViewClicked:(CTADMRAIDView*)adView{
         NSLog(@"user click ad");
     }
+    //mraid ad show
+    - (void)CTAdMaridAdShow:(CTADMRAIDView*)adView{
+    	NSLog(@"ad is show");
+    }
     
 ```
 when you successfully integrated the Banner Ad, you will see the ads are like this
@@ -304,6 +308,11 @@ Interstitial ads are full-screen ads that cover the interface of the host app.
     //click ad
     - (void)CTAdViewClicked:(CTADMRAIDView*)adView{
         NSLog(@"user click ad");
+    }
+    
+    //mraid ad show
+    - (void)CTAdMaridAdShow:(CTADMRAIDView*)adView{
+    	NSLog(@"ad is show");
     }
     
 ```
