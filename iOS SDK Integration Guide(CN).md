@@ -270,6 +270,10 @@ Use this interface to upload consent from affected users.
      条幅广告点击回调
     */
     - (void)CTAdViewClicked:(CTADMRAIDView*)adView;
+    /**
+     条幅广告展示回调
+    */
+    - (void)CTAdMaridAdShow:(CTADMRAIDView*)adView;
 
 ```
 <a name="nativevideo">获取原生视频广告</a>
@@ -332,5 +336,10 @@ CTNativeVideoDelegate 代理回调方法
      插屏广告点击回调
     */
     - (void)CTAdViewClicked:(CTADMRAIDView*)adView;
+    
+    /**
+     插屏广告展示回调
+    */
+    - (void)CTAdMaridAdShow:(CTADMRAIDView*)adView;
 
 ```
