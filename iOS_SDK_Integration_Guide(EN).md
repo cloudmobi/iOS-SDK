@@ -15,7 +15,7 @@
 ## <a name="start">Before You Start</a>
 
 - Cloudmobi iOS SDK supports banner, interstitial, native, and rewarded video 
-- Cloudmobi iOS SDK will not support iOS 7, if your APP needs to supprot iOS 7,please download [SDK supports iOS 7](https://github.com/cloudmobi/iOS-SDK/tree/a1420dfcc148c196725723956b255114bf473a94)
+- Cloudmobi iOS SDK will not support iOS 7, if your APP needs to supprot iOS 7,please download [SDK supports iOS 7](https://github.com/cloudmobi/iOS-SDK/blob/a1420dfcc148c196725723956b255114bf473a94/(CT)iOS-SDK.zip)
 - Please make sure you have signed up on the Cloudmobi Platform. If you haven't signed up, please contact us via email: sdk_support@yeahmobi.com
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
 - Please download [our latest SDK](https://github.com/cloudmobi/iOS-SDK/raw/master/(CT)iOS-SDK.zip)
