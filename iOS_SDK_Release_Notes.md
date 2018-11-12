@@ -2,6 +2,19 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 3.2.3   |     | * use wkwebview for redirection & support for ios8+  |
+| 3.2.2   |     | * add banner and interstitial impression callback function  |
+| 3.2.1   |     | * add ua for request  |
+| 3.2.0   |     | * optimize native ad for impression  |
+| 3.1.9   |     | * simplify banner interface <br> * add banner and interstitial click callback function  |
+| 3.1.8   |     | * custom version - use wkwebview for banner and interstitial  |
+| 3.1.7   |     | * banner & interstitial support iphone X Max and iphone XR  |
+| 3.1.6   |     | * custom version - use uiwebview cache for banner and interstitial  |
+| 3.1.5   |     | * fix memory leak for NSURLSession  |
+| 3.1.4   |     | * fix bug for initializion  |
+| 3.1.3   |     | * private version - use wkwebview for redirection  |
+| 3.1.2   |     | * fix bug for native video still playing covered by vc |
+| 3.1.1   |     | * fix natvie video exception for no free space |
 | 3.1.0   |  2018-08-15  | * fix some timeout problem for interstitial ads |
 | 3.0.8   |  2018-08-03  | * Rewarded video ads supports playable ads |
 | 3.0.0   |  2018-06-25  | * New Banner and interstitial ad format </br>* Banner and interstitial API updates </br> * Interstitial ads supports video and picture and must be fullscreen |
