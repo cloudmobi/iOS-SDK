@@ -2,7 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
-| 3.2.3   |  2018-11-07   | * use wkwebview for redirection & support for ios8+  |
+| 3.2.3   |  2018-11-07   | * use wkwebview for redirection & only support for ios8+  |
 | 3.2.2   |  2018-10-24   | * add banner and interstitial impression callback function  |
 | 3.2.1   |  2018-10-22   | * add ua for request  |
 | 3.2.0   |  2018-10-18   | * optimize native ad for impression  |
