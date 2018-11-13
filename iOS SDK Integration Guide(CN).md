@@ -10,7 +10,8 @@
 
 ###### <a name="begin">在您对接SDK之前需要注意以下几点</a>
 
-- CloudMobi iOS SDK 支持iOS7+，并支持32位和64位应用程序
+- CloudMobi iOS SDK 支持iOS8+，并支持32位和64位应用程序
+- CloudMobi iOS SDK 不支持iOS7.0,如果要支持7.0，请下载此[SDK supports iOS 7](https://github.com/cloudmobi/iOS-SDK/blob/a1420dfcc148c196725723956b255114bf473a94/(CT)iOS-SDK.zip)
 - 集成需要 CloudMobi 账号，所以如果您目前还没有该账号的话，请联系我们的运营人员。
 
 ###### <a name="install">将CloudMobi iOS SDK添加到Xcode项目中</a>
