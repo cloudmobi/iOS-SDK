@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 3.2.8   |  2018-12-28   | * code optimizing |
 | 3.2.7   |  2018-12-11   | * fix banner timeout issue  |
 | 3.2.6   |  2018-12-05   | * fix interstitial & banner ad load success，break system background voice  |
 | 3.2.5   |  2018-11-28   | * fix interstitial ads timeout  |
