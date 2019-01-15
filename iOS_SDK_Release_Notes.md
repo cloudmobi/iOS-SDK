@@ -2,6 +2,8 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 3.3.0   |  2019-01-15   | * fix mraid ad break contrl center bug |
+| 3.2.9   |  2019-01-08   | * code optimizing |
 | 3.2.8   |  2018-12-28   | * code optimizing |
 | 3.2.7   |  2018-12-11   | * fix banner timeout issue  |
 | 3.2.6   |  2018-12-05   | * fix interstitial & banner ad load success，break system background voice  |
