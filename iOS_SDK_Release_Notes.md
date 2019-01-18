@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 3.3.1   |  2019-01-18   | * fix alert frame error when mraid ad show |
 | 3.3.0   |  2019-01-15   | * fix mraid ad break contrl center bug |
 | 3.2.9   |  2019-01-08   | * code optimizing |
 | 3.2.8   |  2018-12-28   | * code optimizing |
