@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 3.3.3   |  2019-02-26   | * fix issue : A memory leak caused by a circular reference（NSURLSession-Delegate） |
 | 3.3.2   |  2019-02-13   | * fix issue : WKWebview click ad failed, Increase the redirection of time |
 | 3.3.1   |  2019-01-18   | * fix issue : closing interstitial changes alert view position, add interface to specify http or https schema |
 | 3.3.0   |  2019-01-15   | * fix issue : interstitials disable music control center, dispatch_once crash |
