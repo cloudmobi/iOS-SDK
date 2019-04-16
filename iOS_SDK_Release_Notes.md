@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 3.3.5   |  2019-04-16   | * fix issue : fix backgroud issue |
 | 3.3.4   |  2019-03-01   | * fix issue : fix memory leak |
 | 3.3.3   |  2019-02-26   | * fix issue : A memory leak caused by a circular reference（NSURLSession-Delegate） |
 | 3.3.2   |  2019-02-13   | * fix issue : WKWebview click ad failed, Increase the redirection of time |
