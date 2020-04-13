@@ -55,7 +55,7 @@
 ![image](https://user-images.githubusercontent.com/7203578/32547248-3a9321bc-c447-11e7-8f41-41d8e383507f.png)
 
 ```
-Class Name: GADMBannerApplins (example)
+Class Name: GADMBannerApplins (for example : banner)
 Parameter: xxxx (Cloudmobi slot id) 
 ```
 
