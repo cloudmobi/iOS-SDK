@@ -70,7 +70,7 @@ You should Call CTSDK init Interface in Application Start!!!
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-      [[CTService shareManager] loadRequestGetCTSDKConfigBySlot_id:You_SlotId];
+      [[Applins shareSDK] initSDK:slotID];
       return YES;
 }
 ``` 
