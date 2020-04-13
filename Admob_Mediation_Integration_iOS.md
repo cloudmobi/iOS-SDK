@@ -8,11 +8,10 @@
 
 * Please make sure you have correctly integrated Admob Rewarded Video or Interstitial or Banner Mediation into your application. 
 * Support banner, interstitial and rewarded video;
-* Support both of 32 bit and 64 bit operating systems;
-* Support iOS 7.0+;
+* Support iOS 8.0+;
 * Please make sure you have signed up on Cloudmobi Platform to get your own slot id for test. If you haven't signed up, please contact us, email to sdk_support@yeahmobi.com.
 * Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
-* [click here to download the mediation adapter](https://github.com/cloudmobi/iOS-SDK/blob/master/iOS_CTSDK_Adapter-For-Admob.zip)
+* [click here to download the mediation adapter](https://github.com/ad-thor/iOS_SDK/blob/master/iOS_ApplinsSDK_Adapter%20_For_Admob.zip)
 
 
 
@@ -56,8 +55,8 @@
 ![image](https://user-images.githubusercontent.com/7203578/32547248-3a9321bc-c447-11e7-8f41-41d8e383507f.png)
 
 ```
-Class Name: GADMAdapterCloudmobi (example)
-Parameter: 260 (Cloudmobi slot id) 
+Class Name: GADMBannerApplins (example)
+Parameter: xxxx (Cloudmobi slot id) 
 ```
 
 -------
@@ -77,9 +76,12 @@ You should Call CTSDK init Interface in Application Start!!!
 ``` 
 
 
-#### 6. Admob Rewarded Video Integration 
+#### 6. Swift
 
-See this [link](https://developers.google.com/admob/android/rewarded-video)
+Please import adapter in your OC-Swift Bridging Header.
+#import "GADMBannerApplins.h"
+#import "GADMInterstitialApplins.h"
+#import "GADMRewardedVideoAdapterApplins.h"
 
 Done!
 You are now all set to deliver Cloudmobi Ads within your application!
