@@ -79,9 +79,11 @@ You should Call CTSDK init Interface in Application Start!!!
 #### 6. Swift
 
 Please import adapter in your OC-Swift Bridging Header.
+````
 #import "GADMBannerApplins.h"
 #import "GADMInterstitialApplins.h"
 #import "GADMRewardedVideoAdapterApplins.h"
+````
 
 Done!
 You are now all set to deliver Cloudmobi Ads within your application!
